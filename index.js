@@ -8,6 +8,15 @@ require('dotenv').config();
 const app = express();
 app.use(helmet()); // security mod
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 // Wrapping readFile function in Promise
 const readFile = (path, opts = 'utf8') =>
   new Promise((res, rej) => {
@@ -45,4 +54,4 @@ app.get('/:model/:method', async (req, res) => {
   }
 });
 
-app.listen(process.env.port || 3000, () => console.log('Server started'));
+app.listen(process.env.port || 5000, () => console.log('Server started'));

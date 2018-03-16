@@ -5,3 +5,6 @@ SELECT * FROM dishes WHERE is_available
 SELECT * FROM dishes WHERE !is_available
 SELECT * FROM dishes ORDER BY id ASC LIMIT 1
 SELECT * FROM dishes ORDER BY id DESC LIMIT 1
+SELECT * FROM dishes
+SELECT * FROM dishes
+SELECT * FROM dishes
