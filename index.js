@@ -52,6 +52,8 @@ app.get('/:model/:method', async (req, res) => {
   } catch (error) {
     res.status(500).send('An error occured');
   }
+
+  db.end();
 });
 
 app.listen(process.env.port || 5000, () => console.log('Server started'));
