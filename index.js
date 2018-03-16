@@ -56,4 +56,4 @@ app.get('/:model/:method', async (req, res) => {
   db.end();
 });
 
-app.listen(process.env.port || 5000, () => console.log('Server started'));
+app.listen(process.env.PORT || 5000, () => console.log('Server started'));
